@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Vehicle>
+@{
+    Layout = "_Layout";
+}
+<table>
+    <thead>
+        <tr><td>Year</td><td>Make/Model</td><td>Mileage</td></tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            <tr>
+                <td><h3> @v.Year </h3></td>
+                <td><h4> @v.Make @v.Model</h4></td>
+                <td><h5> @v.Mileage </h5></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -4,10 +4,15 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <environment>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/VicsStyle.css" />
+    </environment>
 </head>
 
 <body>
-    <h1>XYZ Dealership</h1>
+    <br />
+    <h1 class="col-lg-offset-1" style="font-weight:400; font-family:Kaushan Script; font-size:60px">Vics Vehicles</h1>
     <div>
         @RenderBody()
     </div>

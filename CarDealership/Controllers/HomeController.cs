@@ -1,15 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using CarDealership.Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using CarDealership.Models;
+using System.Collections.Generic;
 
 namespace CarDealership.Controllers
 {
     public class HomeController : Controller
     {
         public IActionResult Index()
-         =>  View(VehicleRepository.GetAll());
+        {
+            return View(VehicleRepository.Vehicles);
+        }
+
+        [HttpGet]
+        public IActionResult CarEntry()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CarEntry(Vehicle vehicle)
+        {
+            VehicleRepository.AddVehicle(vehicle);
+            return RedirectToAction("Index");
+        }
     }
 }
